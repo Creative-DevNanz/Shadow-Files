@@ -72,6 +72,24 @@ async function init() {
     ctx.drawImage(object, 0, 0);
 
     sdbg.drawImage(shadow, 0, 0);
+
+    const dataURL = output.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataURL;
+    link.download = 'output.png';
+    link.click();
+
+    const sdbgDataURL = shadowDebug.toDataURL('image/png');
+    const sdbgLink = document.createElement('a');
+    sdbgLink.href = sdbgDataURL;
+    sdbgLink.download = 'shadowDebug.png';
+    sdbgLink.click();
+
+    const mdbgDataURL = maskDebug.toDataURL('image/png');
+    const mdbgLink = document.createElement('a');
+    mdbgLink.href = mdbgDataURL;
+    mdbgLink.download = 'maskDebug.png';
+    mdbgLink.click();
   }
 
   [angle, elevation, softness, falloff, depthToggle].forEach(el =>
