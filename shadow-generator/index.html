@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realistic Shadow Generator</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <h1>Realistic Shadow Generator</h1>
+    <div class="content">
+      <div class="l-content">
+        <div class="controls">
+          <label>Angle <input id="angle" type="range" min="0" max="360" value="120"></label>
+          <label>Elevation <input id="elevation" type="range" min="5" max="90" value="45"></label>
+          <label>Softness <input id="softness" type="range" min="1" max="20" value="12"></label>
+          <label>Falloff <input type="range" id="falloff" min="0" max="1" step="0.05" value="0.6"></label>
+          <label><input id="depth" type="checkbox" checked /> Depth Map</label>
+        </div>
+        <canvas id="output" style="width: 100%;"></canvas>
+      </div>
+      <div class="r-content">
+        <div class="">
+          <canvas id="shadowDebug" style="width: 100%;"></canvas>
+        </div>
+        <div>
+          <canvas id="maskDebug" style="width: 100%;"></canvas>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
