@@ -17,7 +17,7 @@ const depthToggle = document.getElementById('depth') as HTMLInputElement;
 
 async function init() {
   const fg = await loadImage('/foreground.png');
-  const bg = await loadImage('/background.png');
+  const bg = await loadImage('/background.JPG');
   const depth = await loadImage('/depth.png');
 
   output.width = bg.width;
@@ -66,12 +66,12 @@ async function init() {
     }
 
     ctx.drawImage(bg, 0, 0);
-    ctx.drawImage(generatedShadow, 0, 0);
+    ctx.drawImage(shadow, 100, bg.height - object.height - 50);
 
     // ctx.globalAlpha = 1;
-    ctx.drawImage(object, 0, 0);
+    ctx.drawImage(object, 100, bg.height - object.height - 50);
 
-    sdbg.drawImage(shadow, 0, 0);
+    sdbg.drawImage(shadow, 100, bg.height - object.height - 50);
 
     const dataURL = output.toDataURL('image/png');
     const link = document.createElement('a');
