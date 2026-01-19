@@ -20,21 +20,9 @@ export function extractMask(image: HTMLImageElement): HTMLCanvasElement {
 
   for (let i = 0; i < d.length; i += 4) {
     const a = d[i + 3];
-    if (d[i] > 230) {
-      d[i] = 255;
-    } else {
-      d[i] = 0;
-    }
-    if (d[i + 1] > 230) {
-      d[i + 1] = 255;
-    } else {
-      d[i + 1] = 0;
-    }
-    if (d[i + 2] > 230) {
-      d[i + 2] = 255;
-    } else {
-      d[i + 2] = 0;
-    }
+    d[i] = 0;
+    d[i + 1] = 0;
+    d[i + 2] = 0;
     d[i + 3] = a;
   }
 
